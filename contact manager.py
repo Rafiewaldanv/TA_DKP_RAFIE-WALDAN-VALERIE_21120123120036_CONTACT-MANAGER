@@ -127,7 +127,7 @@ class ContactManager:
             index = self.table.index(selected_item)
             contact = self.contacts.pop(index)
             self.table.delete(selected_item)
-            self.queue.append(contact)  # Add the deleted contact to the queue for undo functionality
+            self.queue.append(contact)  # untuk fungsi undo delete
 
     def undo_delete(self):
         if self.queue:
