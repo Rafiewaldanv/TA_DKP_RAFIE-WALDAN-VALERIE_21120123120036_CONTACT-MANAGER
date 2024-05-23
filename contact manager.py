@@ -57,7 +57,7 @@ class ContactManager:
         phone_label.pack(side=tk.LEFT, padx=5, pady=5)
         self.phone_entry = tk.Entry(self.form_frame)
         self.phone_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=5, pady=5)
-        self.phone_entry.bind('<Return>', lambda event: self.process_form())
+        self.phone_entry.bind('<Return>', lambda event: self.add_contact())
 
     def create_table_panel(self):
         # Membuat panel tabel untuk menampilkan daftar kontak
@@ -97,16 +97,8 @@ class ContactManager:
         exit_button.pack(side=tk.RIGHT, padx=5, pady=5)
 
     def process_form(self):
-        # Memproses form untuk menambah atau mengedit kontak
-        while True:
-            if self.table.selection():
-                self.edit_contact()
-            else:
-                self.add_contact()
-
-            # Menanyakan apakah ingin menambahkan kontak lagi
-            if not mb.askyesno("Add Another Contact", "Apakah ingin menambahkan kontak lagi?"):
-                break
+        # Memproses form untuk menambah kontak baru
+        self.add_contact()
 
     def add_contact(self):
         # Menambahkan kontak baru ke daftar kontak
