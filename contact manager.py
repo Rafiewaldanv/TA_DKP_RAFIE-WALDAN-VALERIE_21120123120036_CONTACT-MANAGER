@@ -191,7 +191,7 @@ class ContactManager:
             self.clear_form()
 
     def exit_program(self):
-        # Menutup program setelah konfirmasi dari pengguna
+     
         if mb.askokcancel("Quit", "Apakah kamu benar ingin keluar dari program ini?"):
             self.window.destroy()
 
